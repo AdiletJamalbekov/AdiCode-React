@@ -6,11 +6,13 @@ import Header from "../../components/header/Header";
 import Modal from "../../components/modal/Modal";
 import Input from '../../components/input/Input';
 import List from '../../components/list/List';
+import Button from "../../components/button/Button";
 
 const MainPage = () => {
-    const navBar = ['About', 'Contacts', 'FAQ', 'Documents']
 
-    const lists = [
+    const navBar = ['About', 'Contacts', 'FAQ', 'Documents'];
+
+    const list = [
         {
             id: 1,
             title: 'coding',
@@ -44,13 +46,13 @@ const MainPage = () => {
         <>
             { show &&
                 <Modal handleShow={handleShow} onChange={handleChange} inputValue={inputValue}>
-                    <List lists={lists}/>
                 </Modal>
             }
 
-
+            <List list={list}/>
             <Buttons/>
-            <button onClick={handleShow}>Show</button>
+            <button onClick={handleShow}>открыть</button>
+            <Button title={'открыть'} action={handleShow}/>
             <Header navBar={navBar}/>
             <User name={'Adilet'} age={21}/>
             <User name={'Bakyt'} age={17}/>
